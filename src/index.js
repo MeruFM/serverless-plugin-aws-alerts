@@ -26,6 +26,13 @@ class AlertsPlugin {
         this.externalStack
       ),
     };
+
+    serverless.configSchemaHandler.defineFunctionProperties('aws', {
+      properties: {
+        alarms: { type: ['string', 'array'] }
+      }
+    });
+
   }
 
   getConfig() {
